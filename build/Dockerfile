@@ -8,7 +8,7 @@ RUN addgroup -g 1000 -S webhook \
  && adduser  -u 1000 -S -G webhook -h /etc/webhook webhook
 
 WORKDIR /default
-COPY hooks.json /default/hooks.json
+COPY hooks.json.example /default/hooks.json
 
 RUN mkdir -p /config/webhook \
  && cp /default/hooks.json /config/webhook/hooks.json \
