@@ -1,0 +1,10 @@
+services:
+  webhook:
+    image: ghcr.io/hueske-digital/webhook:latest
+    environment:
+      - TZ=Europe/Berlin
+    volumes:
+      - $PWD/hooks:/config/webhook
+    ports:
+      - 9000:9000
+    restart: unless-stopped
